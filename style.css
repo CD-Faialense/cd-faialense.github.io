@@ -318,7 +318,144 @@ footer nav a:hover {
 
 /* MEDIA PAGE */
 
-/* Media Page */
+/* ============================================================
+   News Section
+   ============================================================ */
+
+.news-section {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+}
+
+.news-section > h2,
+.videos-section > h2 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 35px 0;
+}
+
+
+/* Featured Article */
+
+.featured-news-card {
+    display: flex;
+    background-color: white;
+    border: 5px solid #c4992d;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    margin-bottom: 30px;
+}
+
+.featured-news-card .news-image {
+    width: 55%;
+}
+
+.featured-news-card .news-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-news-card .news-content {
+    width: 45%;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Smaller Articles */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background-color: white;
+    border: 4px solid #c4992d;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.news-card .news-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.news-card .news-content {
+    padding: 25px;
+}
+
+
+/* Text */
+
+.news-source {
+    color: #c4992d;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+}
+
+.news-content h3 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+.featured-news-card h3 {
+    font-size: 32px;
+}
+
+.news-content p:not(.news-source) {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+
+/* Read Article */
+
+.news-link {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 17px;
+    transition: color 0.15s;
+}
+
+.news-link:hover {
+    color: #c4992d;
+}
+
+
+/* Space Before Videos */
+
+.videos-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 .media-page {
     margin-top: 80px;
