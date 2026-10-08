@@ -1,0 +1,872 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+
+body {
+    background-color: #ffffff;
+}
+
+
+/* Header */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    background-color: #0f4b8c;
+
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+
+    z-index: 10;
+}
+
+
+/* Logo */
+
+header img {
+    width: 65px;
+    height: 100px;
+    position: relative;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+
+/* Navigation */
+
+nav {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+nav a:hover {
+    color: #c4992d;
+}
+
+
+/* Hero */
+
+.hero {
+    margin-top: 80px;
+    position: relative;
+}
+
+.hero > img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.hero .club-name {
+    font-size: 70px;
+
+    color: white;
+    transition: color 0.15s;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+    text-decoration: none;
+}
+
+.hero .club-name:hover {
+    color: #c4992d;
+}
+
+.team-logo {
+    width: 120px !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
+
+
+/* Text */
+
+h1 {
+    color: white;
+    margin-top: 100px;
+}
+
+.club-name {
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Home FLash */
+#flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: white;
+
+    z-index: 1000;
+
+    animation: flash 1s ease-out forwards;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* About the Club */
+.about-club {
+    padding: 70px 30px;
+    background-color: #f5f5f5;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+}
+
+/* About Club Photo */
+.about-photo {
+    width: 50%;
+    max-width: 600px;
+    height: 450px;
+
+    object-fit: cover;
+
+    border: 8px solid #0f4b8c;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* About Club Box */
+.about-box {
+    width: 50%;
+    max-width: 600px;
+    box-sizing: border-box;
+
+    background-color: white;
+
+    padding: 45px;
+
+    border: 8px solid #c4992d;
+    border-radius: 5px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* About Club Heading */
+.about-box h2 {
+    color: #0f4b8c;
+    font-size: 40px;
+
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* About Club Paragraph */
+.about-box p {
+    color: #333;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+/* Our History Link */
+.history-link {
+    align-self: flex-end;
+    text-align: right;
+
+    margin-top: 25px;
+
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    transition: color 0.15s;
+}
+
+.history-link:hover {
+    color: #c4992d;
+}
+/* Photo Carousel */
+
+.photo-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: #c4992d;
+    padding: 25px 0;
+}
+
+.photo-track {
+    display: flex;
+    width: max-content;
+    animation: photo-scroll 40s linear infinite;
+}
+
+.photo-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: 4px solid #0f4b8c;
+}
+
+@keyframes photo-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 200px;
+
+    background-color: #0f4b8c;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+    margin-top: 75px;
+
+    box-sizing: border-box;
+}
+
+footer img {
+    width: 65px;
+    height: 100px;
+
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 120px;
+}
+
+footer nav {
+    display: flex;
+    font-size: 15px;
+    margin-bottom: 100px;
+}
+
+footer nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+footer nav a:hover {
+    color: #c4992d;
+}
+
+
+/* MEDIA PAGE */
+
+/* Media Page */
+
+.media-page {
+    margin-top: 80px;
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+    min-height: 700px;
+}
+
+.media-page > h1 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    text-align: center;
+    font-size: 50px;
+
+    margin: 0 0 50px 0;
+}
+
+
+/* Video Grid */
+
+.video-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+/* Video Cards */
+
+.video-card {
+    background-color: white;
+
+    border: 4px solid #c4992d;
+    border-radius: 5px;
+
+    padding: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 300px;
+
+    border: none;
+}
+
+.video-card h2 {
+    color: #0f4b8c;
+
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+
+    margin: 15px 0 5px 0;
+}
+
+.video-card p {
+    color: #1e1e1e;
+    margin: 0;
+}
+
+
+/* STANDINGS */
+
+/* Standings Page */
+
+.standings-page {
+    margin-top: 80px;
+    padding: 70px 30px 90px 30px;
+    background-color: #f5f5f5;
+    min-height: 700px;
+}
+
+.standings-page h1 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.standings-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    margin: 10px 0 45px 0;
+}
+
+
+/* Table */
+
+.table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Table Header */
+
+.standings-table thead {
+    background-color: #0f4b8c;
+    color: white;
+}
+
+.standings-table th {
+    padding: 18px 12px;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Table Rows */
+
+.standings-table td {
+    padding: 17px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 17px;
+}
+
+
+/* Team Name */
+
+.standings-table td:nth-child(2) {
+    text-align: left;
+    font-weight: bold;
+}
+
+
+/* Alternating Rows */
+
+.standings-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+
+/* Hover */
+
+.standings-table tbody tr:hover {
+    background-color: #eeeeee;
+}
+
+
+/* Faialense */
+
+.standings-table .faialense-row {
+    background-color: #e8f0f8;
+    border-left: 7px solid #c4992d;
+    font-weight: bold;
+}
+
+.standings-table .faialense-row td {
+    color: #0f4b8c;
+}
+
+.standings-table .faialense-row td:last-child {
+    color: #c4992d;
+    font-size: 19px;
+}
+
+
+/* Official BSSL Link */
+
+.official-standings-link {
+    display: block;
+    width: fit-content;
+    margin: 35px auto 0 auto;
+    padding: 14px 25px;
+    background-color: #0f4b8c;
+    color: white;
+    text-decoration: none;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.15s;
+}
+
+.official-standings-link:hover {
+    background-color: #c4992d;
+}
+
+
+/* ROSTER */
+
+/* Roster Page */
+
+.roster-page {
+    margin-top: 80px;
+    padding: 70px 30px 90px 30px;
+    background-color: #f5f5f5;
+    min-height: 700px;
+}
+
+.roster-page > h1 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.roster-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    margin: 10px 0 55px 0;
+}
+
+
+/* Position Sections */
+
+.roster-section {
+    max-width: 1200px;
+    margin: 0 auto 55px auto;
+}
+
+.roster-section h2 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 32px;
+    border-left: 8px solid #c4992d;
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* Tables */
+
+.roster-table-container {
+    overflow-x: auto;
+}
+
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(230, 229, 245);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Table Header */
+
+.roster-table thead {
+    background-color: #0f4b8c;
+    color: rgb(255, 255, 255);
+}
+
+.roster-table th {
+    padding: 16px 12px;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Table Body */
+
+.roster-table td {
+    padding: 15px 12px;
+    text-align: center;
+    font-family: Rockwell, "Courier New", serif;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.roster-table td:nth-child {
+    text-align: left;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: bold;
+}
+
+
+/* Player Links */
+
+.roster-table td a {
+    color: #0f4b8c;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.roster-table td a:hover {
+    color: #c4992d;
+}
+
+
+/* Alternating Rows */
+
+.roster-table tbody tr:nth-child(even) {
+    background-color: #f4f4e4;
+}
+
+
+/* Hover */
+
+.roster-table tbody tr:hover {
+    background-color: #bdb8c9;
+}
+
+/* History Page */
+.history-page {
+    margin-top: 80px;
+    padding: 70px 30px 90px 30px;
+    background-color: #f5f5f5;
+    min-height: 700px;
+}
+
+.history-page h1 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    margin: 0 0 45px 0;
+}
+
+.history-photo {
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+}
+
+.history-photo img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border: 8px solid #0f4b8c;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.history-intro {
+    max-width: 850px;
+    margin: 0 auto 50px auto;
+    padding: 45px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 8px solid #c4992d;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.history-intro h2 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.history-intro p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.coming-soon {
+    margin-top: 30px;
+    color: #c4992d;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* Schedule Page */
+
+.schedule-page {
+    margin-top: 80px;
+    padding: 70px 30px 90px 30px;
+    background-color: #f5f5f5;
+    min-height: 700px;
+}
+
+.schedule-page h1 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+
+.schedule-subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 20px;
+    margin: 10px 0 50px 0;
+}
+
+
+/* Schedule Sections */
+
+.schedule-section {
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+}
+
+.schedule-section h2 {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+
+/* Match Cards */
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.match-card {
+    background-color: white;
+    border-left: 8px solid #c4992d;
+    padding: 22px 25px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    border-radius: 4px;
+}
+
+.match-date {
+    width: 140px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+
+.match-date span {
+    display: block;
+    color: #0f4b8c;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.match-date strong {
+    display: block;
+    color: #555;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.match-info {
+    flex: 1;
+    padding-left: 30px;
+}
+
+.match-info h3 {
+    margin: 0;
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 23px;
+}
+
+.match-info p {
+    margin: 5px 0 0 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.match-location {
+    font-size: 15px !important;
+    color: #777 !important;
+}
+
+.match-type {
+    color: #c4992d;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.match-result {
+    color: #0f4b8c;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 25px;
+    font-weight: 900;
+    padding-left: 20px;
+}
+
+
+/* Official BSSL Link */
+
+.official-schedule-link {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    padding: 14px 25px;
+    background-color: #0f4b8c;
+    color: white;
+    text-decoration: none;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background-color 0.15s;
+}
+
+.official-schedule-link:hover {
+    background-color: #c4992d;
+}
+
+.match-score {
+    color: #0f4b8c !important;
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 25px !important;
+    font-weight: 900;
+    margin: 8px 0 0 0 !important;
+}
