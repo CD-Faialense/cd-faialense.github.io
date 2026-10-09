@@ -23,7 +23,9 @@ header {
 
     display: flex;
     align-items: center;
+
     padding: 0 30px;
+    box-sizing: border-box;
 
     z-index: 10;
 }
@@ -44,8 +46,10 @@ header img {
 
 nav {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 25px;
     font-size: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
