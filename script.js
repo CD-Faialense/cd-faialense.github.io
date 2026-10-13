@@ -1,6 +1,6 @@
 /* Retrieve BSSL*/
 
-fetch("https://www.bssl.com/b_tables.php")
+fetch("https://cd-faialense-backend.vercel.app/api/standings")
     .then(response => response.text())
     .then(data => {
         console.log(data);
