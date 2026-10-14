@@ -695,6 +695,7 @@ footer nav a:hover {
 
 .standings-legend {
     margin: 20px auto 30px;
+    margin-top: 50px;
     text-align: center;
     color: #0f4b8c;
 }
