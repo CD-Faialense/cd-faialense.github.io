@@ -289,8 +289,8 @@ h1 {
     flex-wrap: wrap;
     color: white;
     font-size: 1rem;
-    margin-top: 1000px;
     margin-bottom: 32px;
+    transform: translateY(30px);
 }
 
 .match-date,
