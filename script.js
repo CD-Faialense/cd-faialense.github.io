@@ -98,8 +98,12 @@ async function loadNextMatch() {
 
         const displayTime = timeIsKnown ? kickoff : "TBD";
 
+
         container.innerHTML = `
-            <div class="match-date">${dateText}</div>
+            <div class="match-details">
+                <div class="match-date">${dateText}</div>
+                <div class="match-kickoff">Kickoff: ${displayTime}</div>
+            </div>
 
             <div class="match-teams">
                 ${homeTeam}
@@ -107,20 +111,15 @@ async function loadNextMatch() {
                 ${awayTeam}
             </div>
 
-            <div class="match-kickoff">
-                Kickoff: ${displayTime}
-            </div>
-
             <div class="countdown-label" id="countdown-label">
-                ${timeIsKnown
-                    ? "KICKOFF IN"
-                    : "MATCHDAY STARTS IN"}
+                ${timeIsKnown ? "KICKOFF IN" : "MATCHDAY STARTS IN"}
             </div>
 
             <div class="match-countdown" id="match-countdown">
                 Loading countdown...
             </div>
         `;
+
 
         function updateCountdown() {
             const countdown = document.getElementById("match-countdown");
