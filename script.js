@@ -102,6 +102,123 @@ if (standingsBody && seasonSelect) {
     loadStandings(seasonSelect.value);
 }
 
+/* Schedule */
+
+const upcomingContainer = document.getElementById("upcoming-matches");
+const previousContainer = document.getElementById("previous-matches");
+
+if (upcomingContainer && previousContainer) {
+    fetch("https://cd-faialense-backend.vercel.app/api/schedule")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Could not load schedule");
+            }
+            return response.json();
+        })
+        .then(data => {
+            const matches = data.matches.filter(match =>
+                match.homeTeam.toLowerCase().includes("cd faialense") ||
+                match.awayTeam.toLowerCase().includes("cd faialense")
+            );
+
+            upcomingContainer.replaceChildren();
+            previousContainer.replaceChildren();
+
+            matches.forEach(match => {
+                const hasScore =
+                    match.homeScore !== null &&
+                    match.awayScore !== null;
+
+                const card = document.createElement("div");
+                card.className = "match-card";
+
+                if (hasScore) {
+                    card.classList.add("completed");
+                }
+
+                const date = document.createElement("div");
+                date.className = "match-date";
+
+                const dateText = document.createElement("span");
+                dateText.textContent = match.date || "Date TBD";
+
+                const status = document.createElement("strong");
+                status.textContent = hasScore ? "FINAL" : "UPCOMING";
+
+                date.append(dateText, status);
+
+                const info = document.createElement("div");
+                info.className = "match-info";
+
+                const teams = document.createElement("h3");
+                teams.textContent = `${match.homeTeam} vs ${match.awayTeam}`;
+
+                info.appendChild(teams);
+
+                if (hasScore) {
+                    const score = document.createElement("p");
+                    score.className = "match-score";
+                    score.textContent =
+                        `${match.homeScore} - ${match.awayScore}`;
+                    info.appendChild(score);
+                }
+
+                const location = document.createElement("p");
+                location.className = "match-location";
+                location.textContent = match.field || "Field information pending";
+
+                info.appendChild(location);
+
+                const time = document.createElement("p");
+                time.className = "match-location";
+                time.textContent = match.time || "Kickoff time TBD";
+                info.appendChild(time);
+
+                card.append(date, info);
+
+                if (hasScore) {
+                    const result = document.createElement("div");
+                    result.className = "match-result";
+
+                    const isHome = match.homeTeam
+                        .toLowerCase()
+                        .includes("cd faialense");
+
+                    const clubScore = isHome
+                        ? match.homeScore
+                        : match.awayScore;
+
+                    const opponentScore = isHome
+                        ? match.awayScore
+                        : match.homeScore;
+
+                    result.textContent =
+                        clubScore > opponentScore ? "W" :
+                        clubScore < opponentScore ? "L" : "D";
+
+                    card.appendChild(result);
+                }
+
+                (hasScore ? previousContainer : upcomingContainer)
+                    .appendChild(card);
+            });
+
+            if (!upcomingContainer.hasChildNodes()) {
+                upcomingContainer.textContent = "No upcoming matches listed.";
+            }
+
+            if (!previousContainer.hasChildNodes()) {
+                previousContainer.textContent = "No previous results listed.";
+            }
+        })
+        .catch(error => {
+            console.error("Schedule error:", error);
+            upcomingContainer.textContent = "Schedule could not load.";
+            previousContainer.textContent = "Results could not load.";
+        });
+}
+
+
 
 /* Header + Footer */
 
