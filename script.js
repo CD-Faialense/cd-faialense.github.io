@@ -17,7 +17,50 @@ async function loadNextMatch() {
 
         console.log("Schedule data:", data);
 
-        // We'll select the next match in the next step.
+        
+        // Ignore the header row and find CD Faialense's upcoming match.
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcomingMatches = data.matches
+            .filter(match =>
+                match.homeTeam !== "Home Team" &&
+                (match.homeTeam.includes("CD Faialense") ||
+                 match.awayTeam.includes("CD Faialense"))
+            )
+            .map(match => {
+                const [monthName, day] = match.date.split("-");
+                const monthIndex = new Date(`${monthName} 1, 2026`).getMonth();
+
+                const matchDate = new Date(2026, monthIndex, Number(day));
+                matchDate.setHours(0, 0, 0, 0);
+
+                return { ...match, matchDate };
+            })
+            .filter(match => match.matchDate >= today)
+            .sort((a, b) => a.matchDate - b.matchDate);
+
+        const nextMatch = upcomingMatches[0];
+
+        if (!nextMatch) {
+            container.innerHTML = "<p>No upcoming matches scheduled.</p>";
+            return;
+        }
+
+        const dateText = nextMatch.matchDate.toLocaleDateString("en-US", {
+            weekday: "long",
+            month: "long",
+            day: "numeric"
+        });
+
+        container.innerHTML = `
+            <p>${dateText}</p>
+            <h3>${nextMatch.homeTeam}</h3>
+            <p>VS</p>
+            <h3>${nextMatch.awayTeam}</h3>
+            <p>Kickoff: TBD</p>
+        `;
+
     } catch (error) {
         console.error("Error loading next match:", error);
         container.innerHTML = "<p>Unable to load the next match.</p>";
