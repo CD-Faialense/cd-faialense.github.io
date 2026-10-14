@@ -531,8 +531,6 @@ footer nav a:hover {
 
 /* STANDINGS */
 
-/* Standings Page */
-
 .standings-page {
     margin-top: 80px;
     padding: 70px 30px 90px 30px;
@@ -661,6 +659,36 @@ footer nav a:hover {
 
 .official-standings-link:hover {
     background-color: #c4992d;
+}
+
+/* Season Selector */
+
+.season-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 30px;
+}
+
+.season-selector label {
+    font-weight: bold;
+}
+
+.season-selector select {
+    padding: 10px 14px;
+    border: 2px solid #c4992d;
+    border-radius: 6px;
+    background-color: white;
+    color: #0f4b8c;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.season-selector select:focus {
+    outline: 2px solid #0f4b8c;
+    outline-offset: 2px;
 }
 
 
