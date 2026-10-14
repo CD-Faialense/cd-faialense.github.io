@@ -100,15 +100,16 @@ async function loadNextMatch() {
 
 
         container.innerHTML = `
-            <div class="match-details">
-                <div class="match-date">${dateText}</div>
-                <div class="match-kickoff">Kickoff: ${displayTime}</div>
-            </div>
 
             <div class="match-teams">
                 ${homeTeam}
                 <span class="match-vs">VS</span>
                 ${awayTeam}
+            </div>
+
+            <div class="match-details">
+                <div class="match-date">${dateText}</div>
+                <div class="match-kickoff">Kickoff: ${displayTime}</div>
             </div>
 
             <div class="countdown-label" id="countdown-label">
