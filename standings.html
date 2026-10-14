@@ -11,11 +11,24 @@
 
     <main class="standings-page">
 
+        
         <h1>Division 1 Standings</h1>
 
-        <p class="standings-subtitle">
+        <p class="standings-subtitle" id="season-subtitle">
             Bay State Soccer League — 2026 Season
         </p>
+
+        <div class="season-selector">
+            <label for="season-select">Choose Season:</label>
+            <select id="season-select">
+                <option value="2026" selected>2026 Season</option>
+                <option value="2025">2025 Season</option>
+                <option value="2024">2024 Season</option>
+                <option value="2023">2023 Season</option>
+                <option value="2022">2022 Season</option>
+            </select>
+        </div>
+
 
         <div class="table-container">
 
@@ -35,140 +48,6 @@
                         <th>PTS</th>
                     </tr>
                 </thead>
-
-                <!--<tbody>
-
-                    <tr class="faialense-row">
-                        <td>1</td>
-                        <td>CD Faialense</td>
-                        <td>10</td>
-                        <td>7</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>29</td>
-                        <td>11</td>
-                        <td>+18</td>
-                        <td>23</td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Loco Gunners</td>
-                        <td>10</td>
-                        <td>7</td>
-                        <td>2</td>
-                        <td>1</td>
-                        <td>26</td>
-                        <td>11</td>
-                        <td>+15</td>
-                        <td>22</td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>FC Omens</td>
-                        <td>10</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>26</td>
-                        <td>18</td>
-                        <td>+8</td>
-                        <td>18</td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Boston Football Club</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>-1</td>
-                        <td>13</td>
-                    </tr>
-
-                    <tr>
-                        <td>5</td>
-                        <td>Kendall Wanderers</td>
-                        <td>9</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>5</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>-1</td>
-                        <td>11</td>
-                    </tr>
-
-                    <tr>
-                        <td>6</td>
-                        <td>Boston Rovers</td>
-                        <td>10</td>
-                        <td>3</td>
-                        <td>6</td>
-                        <td>1</td>
-                        <td>15</td>
-                        <td>24</td>
-                        <td>-9</td>
-                        <td>10</td>
-                    </tr>
-
-                    <tr>
-                        <td>7</td>
-                        <td>MIT</td>
-                        <td>11</td>
-                        <td>2</td>
-                        <td>6</td>
-                        <td>3</td>
-                        <td>14</td>
-                        <td>25</td>
-                        <td>-11</td>
-                        <td>9</td>
-                    </tr>
-
-                    <tr>
-                        <td>8</td>
-                        <td>Rovers FC</td>
-                        <td>10</td>
-                        <td>1</td>
-                        <td>7</td>
-                        <td>2</td>
-                        <td>13</td>
-                        <td>32</td>
-                        <td>-19</td>
-                        <td>5</td>
-                    </tr>
-
-                    <tr>
-                        <td>9</td>
-                        <td>Atletico Boston</td>
-                        <td>10</td>
-                        <td>4</td>
-                        <td>4</td>
-                        <td>2</td>
-                        <td>22</td>
-                        <td>22</td>
-                        <td>0</td>
-                        <td>2</td>
-                    </tr>
-
-                    <tr>
-                        <td>10</td>
-                        <td>Providence City FC</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0</td>
-                    </tr>
-
-                </tbody> -->
 
                 <tbody id="standings-body">
                     <tr>
