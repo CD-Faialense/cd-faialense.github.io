@@ -5,7 +5,7 @@ html {
 /* Body */
 
 body {
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 }
 
 
@@ -242,6 +242,59 @@ h1 {
 .history-link:hover {
     color: #c4992d;
 }
+
+
+/* Next Match Section */
+.next-match-section {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.next-match-container {
+    width: 100%;
+    max-width: 650px;
+    background-color: #0f4b8c;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
+}
+
+.next-match-container h2 {
+    color: #c4992d;
+    font-size: 2rem;
+    font-family: Rockwell, "Courier New", serif;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+#next-match-content {
+    background-color: white;
+    color: #0f4b8c;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-button {
+    display: inline-block;
+    font-family: Rockwell, "Courier New", serif;
+    background-color: #c4992d;
+    color: #0f4b8c;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.schedule-button:hover {
+    background-color: #ddb849;
+}
+
 /* Photo Carousel */
 
 .photo-carousel {

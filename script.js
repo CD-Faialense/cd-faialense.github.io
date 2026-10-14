@@ -1,3 +1,31 @@
+/* Next Match */
+async function loadNextMatch() {
+    const container = document.getElementById("next-match-content");
+
+    if (!container) return;
+
+    try {
+        const response = await fetch(
+            "https://cd-faialense-backend.vercel.app/api/schedule"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to load schedule");
+        }
+
+        const data = await response.json();
+
+        console.log("Schedule data:", data);
+
+        // We'll select the next match in the next step.
+    } catch (error) {
+        console.error("Error loading next match:", error);
+        container.innerHTML = "<p>Unable to load the next match.</p>";
+    }
+}
+
+loadNextMatch();
+
 
 /* Retrieve BSSL Standings */
 
