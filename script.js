@@ -15,10 +15,6 @@ async function loadNextMatch() {
 
         const data = await response.json();
 
-        console.log("Schedule data:", data);
-
-        
-        // Ignore the header row and find CD Faialense's upcoming match.
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
@@ -30,9 +26,13 @@ async function loadNextMatch() {
             )
             .map(match => {
                 const [monthName, day] = match.date.split("-");
-                const monthIndex = new Date(`${monthName} 1, 2026`).getMonth();
+                const monthIndex =
+                    new Date(`${monthName} 1, 2026`).getMonth();
 
-                const matchDate = new Date(2026, monthIndex, Number(day));
+                const matchDate = new Date(
+                    2026, monthIndex, Number(day)
+                );
+
                 matchDate.setHours(0, 0, 0, 0);
 
                 return { ...match, matchDate };
@@ -43,27 +43,117 @@ async function loadNextMatch() {
         const nextMatch = upcomingMatches[0];
 
         if (!nextMatch) {
-            container.innerHTML = "<p>No upcoming matches scheduled.</p>";
+            container.innerHTML =
+                "<p>No upcoming matches scheduled.</p>";
             return;
         }
 
-        const dateText = nextMatch.matchDate.toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
-            day: "numeric"
-        });
+        const dateText = nextMatch.matchDate.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "long",
+                month: "long",
+                day: "numeric"
+            }
+        );
+
+        const homeIsFaialense =
+            nextMatch.homeTeam.includes("CD Faialense");
+
+        const homeTeam = homeIsFaialense
+            ? `<span class="faialense-team">${nextMatch.homeTeam}</span>`
+            : `<span class="opponent-team">${nextMatch.homeTeam}</span>`;
+
+        const awayTeam = !homeIsFaialense
+            ? `<span class="faialense-team">${nextMatch.awayTeam}</span>`
+            : `<span class="opponent-team">${nextMatch.awayTeam}</span>`;
+
+        // If the kickoff time is known, count down to it.
+        // Otherwise, count down to midnight at the start of matchday.
+        const kickoff = nextMatch.time;
+        const timeIsKnown = kickoff &&
+            !/tbd|tba|unknown/i.test(kickoff);
+
+        let targetDate = new Date(nextMatch.matchDate);
+
+        if (timeIsKnown) {
+            const timeMatch = kickoff.match(
+                /(\d{1,2}):(\d{2})\s*(AM|PM)?/i
+            );
+
+            if (timeMatch) {
+                let hours = Number(timeMatch[1]);
+                const minutes = Number(timeMatch[2]);
+                const meridiem = timeMatch[3]?.toUpperCase();
+
+                if (meridiem === "PM" && hours < 12) hours += 12;
+                if (meridiem === "AM" && hours === 12) hours = 0;
+
+                targetDate.setHours(hours, minutes, 0, 0);
+            } else {
+                // Unrecognized time format: safely use matchday.
+                targetDate.setHours(0, 0, 0, 0);
+            }
+        }
+
+        const displayTime = timeIsKnown ? kickoff : "TBD";
 
         container.innerHTML = `
-            <p>${dateText}</p>
-            <h3>${nextMatch.homeTeam}</h3>
-            <p>VS</p>
-            <h3>${nextMatch.awayTeam}</h3>
-            <p>Kickoff: TBD</p>
+            <div class="match-date">${dateText}</div>
+
+            <div class="match-teams">
+                ${homeTeam}
+                <span class="match-vs">VS</span>
+                ${awayTeam}
+            </div>
+
+            <div class="match-kickoff">
+                Kickoff: ${displayTime}
+            </div>
+
+            <div class="countdown-label" id="countdown-label">
+                ${timeIsKnown
+                    ? "KICKOFF IN"
+                    : "MATCHDAY STARTS IN"}
+            </div>
+
+            <div class="match-countdown" id="match-countdown">
+                Loading countdown...
+            </div>
         `;
+
+        function updateCountdown() {
+            const countdown = document.getElementById("match-countdown");
+            const label = document.getElementById("countdown-label");
+
+            if (!countdown || !label) return;
+
+            const remaining = targetDate.getTime() - Date.now();
+
+            if (remaining <= 0) {
+                countdown.textContent = timeIsKnown
+                    ? "Kickoff time!"
+                    : "Matchday is here!";
+                return;
+            }
+
+            const totalSeconds = Math.floor(remaining / 1000);
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            countdown.textContent =
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
     } catch (error) {
         console.error("Error loading next match:", error);
-        container.innerHTML = "<p>Unable to load the next match.</p>";
+        container.innerHTML =
+            "<p>Unable to load the next match.</p>";
     }
 }
 
