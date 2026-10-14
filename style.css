@@ -568,7 +568,7 @@ footer nav a:hover {
 .standings-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background-color: rgb(230, 229, 245);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
 }
 
@@ -610,7 +610,7 @@ footer nav a:hover {
 /* Alternating Rows */
 
 .standings-table tbody tr:nth-child(even) {
-    background-color: #f8f8f8;
+    background-color: #f4f4e4;
 }
 
 
@@ -720,8 +720,6 @@ footer nav a:hover {
 
 
 /* ROSTER */
-
-/* Roster Page */
 
 .roster-page {
     margin-top: 80px;
