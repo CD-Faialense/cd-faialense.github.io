@@ -243,10 +243,6 @@ h1 {
     color: #c4992d;
 }
 
-
-
-
-
 /* Next Match Section */
 
 .next-match-section {
@@ -293,7 +289,7 @@ h1 {
     flex-wrap: wrap;
     color: white;
     font-size: 1rem;
-    margin-top: 30px;
+    margin-top: 1000px;
     margin-bottom: 32px;
 }
 
