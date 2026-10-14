@@ -691,6 +691,32 @@ footer nav a:hover {
     outline-offset: 2px;
 }
 
+/* Standings Legend */
+
+.standings-legend {
+    margin: 20px auto 30px;
+    text-align: center;
+    color: #0f4b8c;
+}
+
+.standings-legend p {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    font-size: 14px;
+}
+
+.legend-items strong {
+    color: #c4992d;
+}
+
+
 
 /* ROSTER */
 
