@@ -466,6 +466,148 @@ async function loadSchedule() {
 
 loadSchedule();
 
+/* History Page scripts */
+
+
+const historyEvents = {
+    "Pre-1957": {
+        date: "1427-1956",
+        title: "Faial - A Ilha Azul",
+        description: `In Portugal, there is a group of islands that make up the Azores.
+        One of these islands is the beginning of our club's story: A Ilha Azul, Faial.
+        Faial, also known as the Blue Island due to its blue hydrangeas lining its roads, 
+        was a quaint island spanning only 66 square miles. Between the 18th and 20th centuries,
+        it was mostly used as a stopover between Brazil and Asia.`,
+        image: "images/Faial-Island-Azores.png",
+        alt: "Historical photograph representing Faial's past"
+    },
+
+    "1957": {
+        date: "1957–1958",
+        title: "The Capelinhos Eruption",
+        description: `Unfortunately, being a small island didn't mean that Faial stayed out of 
+        danger. On September 27, 1957, an underwater eruption from the Capelinhos volcano began 
+        and lasted until October 24, 1958. These eruptions destroyed 300 homes in the parishes 
+        of Capelo and Praia do Norte in the northern parts of Faial. This destruction led to 
+        1,712 people from Faial fleeing to the United States, with another 2,000–3,000 
+        people also fleeing from other parts of the Azores. But where could this group of
+        almost 2,000 Faialenses end up, you may ask? East Cambridge.`,
+        image: "images/capelinhos_eruption.png",
+        alt: "Historical photograph representing Faial's past"
+    },
+
+    "1971": {
+        date: "1971",
+        title: "The Founding of Faialense Sport Club",
+        description: `Most of the Faialenses who fled had found themselves in Cambridge, Massachusetts. 
+        In the summer of 1971, a team was formed under the name Faialense Sport Club, playing in 
+        the Luso-American Soccer Association, with every founding member of the team coming
+        from the Blue Island.`,
+        image: "images/faialense-old-photo.png",
+        alt: "Historical photograph of CD Faialense"
+    },
+
+    "1984": {
+        date: "1984",
+        title: "1121 Cambridge Street",
+        description: `The team operated for 13 years at multiple locations, with the first and most prominent
+        being a converted meat market. In 1984, the club bought a building at 1121 Cambridge Street,
+         which has been its official location ever since.`,
+        image: "images/clube-photo-internal.png",
+        alt: "CD Faialense club trophies"
+    },
+
+    "1985-2022": {
+        date: "1985-2022",
+        title: "Times of Changing",
+        description: `In the 1990s, the club's soccer side began to decline, with the group focusing 
+        more on the club and community rather than soccer. During this period, the team went 
+        through a couple of name changes, being rebranded as PAC Lawrence and then Merrimack Valley 
+        United FC in 2014.`,
+        image: "images/Merrimack-Valley-United.png",
+        alt: "CD Faialense club trophies"
+    },
+
+    "2023": {
+        date: "2023",
+        title: "A new Era for CD Faialense",
+        description: `In 2023, the team became CD Faialense, returning to a name connected to the Blue Island 
+        and the community that founded the club. That same year, CD Faialense won the BSSL First Division,
+        beginning a successful period for the club.`,
+        image: "images/team-photo-2023.png",
+        alt: "CD Faialense trophies"
+    },
+
+    "2024": {
+        date: "2024",
+        title: "Back-to-Back BSSL Champions",
+        description: `CD Faialense continued its success in 2024, winning the BSSL First Division for the 
+        second consecutive year. After winning the title in 2023, the club once again finished the season
+         as champions. In November they also qualified for the 2025 US Open Cup after win over FCY NY`,
+        image: "images/blazing-musket-image.png",
+        alt: "CD Faialense trophies"
+    },
+
+    "2025": {
+        date: "2025",
+        title: "Road to the Open Cup",
+        description: `In 2025, CD Faialense finished second in the BSSL First Division after winning the 
+        title in the previous two seasons. The club played in the first round of the 2025 U.S. Open Cup, 
+        facing professional US1 side Portland Hearts of Pine and bringing its name to a wider audience.
+        Faialense also qualified for the 2026 version of the Open Cup.`,
+        image: "images/qualified.png",
+        alt: "CD Faialense team photograph"
+    },
+
+    "2026": {
+        date: "2026",
+        title: "Continuing the Journey",
+        description: `In recent years, CD Faialense has been going from strength to strength. The club 
+        played the first round of the 2026 U.S. Open Cup, playing against professional USL Championship
+        side Rhode Island FC. In the current season, CD Faialense has reached the third qualifying round
+        of the 2027 U.S. Open Cup, reached the final of the 2026 BSSL McKenzie Cup, and is currently in a 
+        title fight to reclaim its BSSL First Division title and make a third straight appearance in the
+        Open Cup.`,
+        image: "images/faialense-trophies.png",
+        alt: "CD Faialense trophies"
+    }
+};
+
+function setupHistoryTimeline() {
+    const buttons = document.querySelectorAll(".timeline-button");
+
+    const date = document.getElementById("history-date");
+    const title = document.getElementById("history-title");
+    const description = document.getElementById("history-description");
+    const image = document.getElementById("history-image");
+
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const year = button.dataset.year;
+            const event = historyEvents[year];
+
+            if (!event) return;
+
+            date.textContent = event.date;
+            title.textContent = event.title;
+            description.textContent = event.description;
+
+            image.src = event.image;
+            image.alt = event.alt;
+
+            buttons.forEach(function(otherButton) {
+                otherButton.classList.remove("active");
+            });
+
+            button.classList.add("active");
+        });
+    });
+}
+
+if (document.querySelector(".history-timeline")) {
+    setupHistoryTimeline();
+}
+
 
 
 /* Header + Footer */
