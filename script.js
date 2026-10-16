@@ -143,11 +143,11 @@ async function loadNextMatch() {
             const minutes = Math.floor((totalSeconds % 3600) / 60);
             const seconds = totalSeconds % 60;
 
-            countdown.textContent =
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            countdown.textContent = 
+            `${days > 0 ? `${days}d ` : ""}${days > 0 || hours > 0 ? `${hours}h ` : ""}${days > 0 || hours > 0 || minutes > 0 ? `${minutes}m ` : ""} ${seconds}s`;
         }
-
-        updateCountdown();
+        
+            updateCountdown();
         setInterval(updateCountdown, 1000);
 
     } catch (error) {
