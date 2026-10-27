@@ -167,6 +167,118 @@ h1 {
     }
 }
 
+
+/* Main Navigation */
+
+.main-navigation {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    padding: 30px 5%;
+}
+
+/* Image Card */
+
+.nav-card {
+    position: relative;
+    display: block;
+
+    height: 300px;
+    overflow: hidden;
+
+    text-decoration: none;
+    color: white;
+
+    border: 4px solid #c4992d;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background-color: #0f4b8c;
+}
+
+/* Image */
+
+.nav-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    transition: transform 0.4s ease;
+}
+/* Zoom Image on Hover */
+
+.nav-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Bottom Title Overlay */
+
+.nav-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35px 15px 22px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 25, 55, 0.95),
+        rgba(0, 25, 55, 0.0)
+    );
+
+    pointer-events: none;
+}
+
+.nav-card-title h2 {
+    margin: 0;
+
+    color: white;
+    font-size: 28px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Gold Underline */
+
+.nav-card-title h2::after {
+    content: "";
+    display: block;
+
+    width: 65px;
+    height: 3px;
+
+    margin: 12px auto 0;
+
+    background-color: #c4992d;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 800px) {
+    .main-navigation {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+        gap: 18px;
+    }
+
+    .nav-card {
+        height: 250px;
+    }
+}
+
+
+
 /* About the Club */
 .about-club {
     padding: 70px 30px;
