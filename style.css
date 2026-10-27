@@ -78,6 +78,63 @@ nav a:hover {
     color: #c4992d;
 }
 
+.nav-style {
+
+    color: white;
+    transition: color 0.15s;
+
+    margin: 0;
+    padding: 0;
+
+    display: block;
+    text-decoration: none;
+
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Dropdown for Season */
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+
+    min-width: 180px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    display: block;
+    padding: 15px;
+    font-family: Rockwell, "Courier New", serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: color 0.20s;
+}
+
+.dropdown-content a:hover {
+    color:#c4992d;
+    background-color: #f5f5f5;
+}
+
+/* Show menu on hover or keyboard focus */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
 
 /* Hero */
 
