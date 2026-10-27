@@ -490,6 +490,15 @@ footer nav a:hover {
     color: #c4992d;
 }
 
+footer p {
+    position: absolute;
+    margin-top: 150px;
+    color: white;
+
+    width: 100%;
+    text-align: center;
+}
+
 
 /* MEDIA PAGE */
 
