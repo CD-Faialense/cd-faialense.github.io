@@ -2,12 +2,28 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Body */
-
 body {
     background-color: #f5f5f5;
-}
+    margin: 0;
 
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0px,
+            transparent 19px,
+            rgba(15, 75, 140, 0.2) 19.5px,
+            transparent 20px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0px,
+            transparent 19px,
+            rgba(15, 75, 140, 0.2) 19.5px,
+            transparent 20px
+        );
+
+    background-attachment: fixed;
+}
 
 /* Header */
 
@@ -154,7 +170,6 @@ h1 {
 /* About the Club */
 .about-club {
     padding: 70px 30px;
-    background-color: #f5f5f5;
 
     display: flex;
     justify-content: center;
@@ -731,7 +746,8 @@ footer p {
 
 .standings-subtitle {
     text-align: center;
-    color: #555;
+    font-family: Rockwell, "Courier New", serif;
+    color: black;
     font-size: 20px;
     margin: 10px 0 45px 0;
 }
@@ -774,6 +790,7 @@ footer p {
 .standings-table td {
     padding: 17px 12px;
     text-align: center;
+    font-family: Rockwell, "Courier New", serif;
     border-bottom: 1px solid #ddd;
     font-size: 17px;
 }
@@ -834,11 +851,13 @@ footer p {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 4px;
-    transition: background-color 0.15s;
+    border: 2px solid #c4992d;
+    transition: color 0.15s, background-color 0.15s;
 }
 
 .official-standings-link:hover {
-    background-color: #c4992d;
+    color: #c4992d;
+    background-color: #041e3a;
 }
 
 /* Season Selector */
@@ -891,6 +910,7 @@ footer p {
     justify-content: center;
     gap: 10px 20px;
     font-size: 14px;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .legend-items strong {
