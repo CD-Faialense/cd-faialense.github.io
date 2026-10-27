@@ -206,7 +206,7 @@ h1 {
     height: 100%;
 
     object-fit: cover;
-    
+
     border-radius: 8px;
     box-sizing: border-box;
 
@@ -619,6 +619,7 @@ footer nav a:hover {
 
 footer p {
     position: absolute;
+    font-family: Rockwell, 'Courier New', serif;
     margin-top: 150px;
     color: white;
 
@@ -629,9 +630,7 @@ footer p {
 
 /* MEDIA PAGE */
 
-/* ============================================================
-   News Section
-   ============================================================ */
+/* News Section*/
 
 .news-section {
     max-width: 1200px;
@@ -771,7 +770,6 @@ footer p {
 .media-page {
     margin-top: 80px;
     padding: 60px 40px;
-    background-color: #f5f5f5;
     min-height: 700px;
 }
 
@@ -1031,16 +1029,25 @@ footer p {
 
 
 
-/* ROSTER */
+
+/*ROSTER*/
 
 .roster-page {
-    margin-top: 80px;
-    padding: 70px 30px 90px 30px;
-    background-color: #f5f5f5;
+    max-width: 1500px;
+    margin: 80px auto 0;
+    padding: 50px 30px 90px;
     min-height: 700px;
+    box-sizing: border-box;
 }
 
-.roster-page > h1 {
+/* Page Heading */
+
+.roster-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.roster-page h1 {
     color: #0f4b8c;
     font-family: Rockwell, "Courier New", serif;
     font-weight: 900;
@@ -1053,111 +1060,257 @@ footer p {
 
 .roster-subtitle {
     text-align: center;
-    color: #555;
+    color: black;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 20px;
-    margin: 10px 0 55px 0;
+    margin: 10px 0 0;
 }
 
+/* ==============================
+   POSITION NAVIGATION
+============================== */
 
-/* Position Sections */
+.roster-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 35px 0 55px;
+    padding: 15px;
+
+    background-color: #f4f5f7;
+    border-bottom: 4px solid #c4992d;
+    border-radius: 8px;
+}
+
+.roster-nav a {
+    color: #0f4b8c;
+    text-decoration: none;
+
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    padding: 12px 16px;
+    border-radius: 5px;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.roster-nav a:hover {
+    background-color: #0f4b8c;
+    color: white;
+}
+
+/* ==============================
+   POSITION SECTIONS
+============================== */
 
 .roster-section {
-    max-width: 1200px;
-    margin: 0 auto 55px auto;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    scroll-margin-top: 120px;
 }
 
-.roster-section h2 {
+.roster-section > h2 {
     color: #0f4b8c;
+
     font-family: Rockwell, "Courier New", serif;
     font-weight: 900;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 32px;
+
     border-left: 8px solid #c4992d;
-    padding-left: 15px;
-    margin-bottom: 20px;
+    padding: 5px 0 5px 15px;
+    margin: 0 0 25px;
 }
 
+/* ==============================
+   PLAYER GRID
+============================== */
 
-/* Tables */
-
-.roster-table-container {
-    overflow-x: auto;
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
 }
 
-.roster-table {
+/* ==============================
+   PLAYER CARDS
+============================== */
+
+.roster-page .player-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background-color: white;
+    color: #222;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.roster-page .player-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 8px 22px rgba(15, 75, 140, 0.22);
+}
+
+/* Player Photos */
+
+.roster-page .player-card img {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
-    background-color: rgb(230, 229, 245);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    height: 220px;
+
+    object-fit: contain;
+    box-sizing: border-box;
+    padding: 12px;
+
+    background-color: #f7f8fa;
+    border-bottom: 4px solid #c4992d;
 }
 
+/* ==============================
+   PLAYER INFORMATION
+============================== */
 
-/* Table Header */
-
-.roster-table thead {
-    background-color: #0f4b8c;
-    color: rgb(255, 255, 255);
+.roster-page .player-info {
+    padding: 16px;
 }
 
-.roster-table th {
-    padding: 16px 12px;
-    font-family: Rockwell, "Courier New", serif;
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
-/* Table Body */
-
-.roster-table td {
-    padding: 15px 12px;
-    text-align: center;
-    font-family: Rockwell, "Courier New", serif;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-}
-
-.roster-table td:nth-child {
-    text-align: left;
-    font-family: Rockwell, "Courier New", serif;
-    font-weight: bold;
-}
-
-
-/* Player Links */
-
-.roster-table td a {
+.roster-page .player-info h3 {
     color: #0f4b8c;
-    text-decoration: none;
-    transition: color 0.15s;
+
+    font-family: Rockwell, "Courier New", serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.3;
+
+    margin: 0 0 8px;
 }
 
-.roster-table td a:hover {
-    color: #c4992d;
+.roster-page .player-info > p {
+    color: #777;
+    font-size: 14px;
+    margin: 0 0 14px;
 }
 
+/* Age and Nationality */
 
-/* Alternating Rows */
+.roster-page .player-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 
-.roster-table tbody tr:nth-child(even) {
-    background-color: #f4f4e4;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+
+    color: #555;
+    font-size: 13px;
 }
 
+/* ==============================
+   RESPONSIVE LAYOUT
+============================== */
 
-/* Hover */
+/* Tablets and smaller laptops */
 
-.roster-table tbody tr:hover {
-    background-color: #bdb8c9;
+@media (max-width: 1000px) {
+    .roster-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
 }
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .roster-page {
+        padding: 35px 18px 60px;
+    }
+
+    .roster-page h1 {
+        font-size: 36px;
+    }
+
+    .roster-subtitle {
+        font-size: 17px;
+    }
+
+    .roster-nav {
+        gap: 6px;
+        margin: 25px 0 40px;
+        padding: 10px;
+    }
+
+    .roster-nav a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .roster-section {
+        margin-bottom: 45px;
+    }
+
+    .roster-section > h2 {
+        font-size: 25px;
+    }
+
+    .roster-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .roster-page .player-card img {
+        height: 180px;
+    }
+
+    .roster-page .player-info {
+        padding: 12px;
+    }
+
+    .roster-page .player-info h3 {
+        font-size: 16px;
+    }
+
+    .roster-page .player-details {
+        font-size: 12px;
+    }
+}
+
+/* Very small phones */
+
+@media (max-width: 380px) {
+    .roster-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth Scrolling */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
 
 /* History Page */
 
 .history-page {
     margin-top: 80px;
-    padding: 70px 30px 90px;
-    background-color: #f5f5f5;
     min-height: 700px;
 }
 
@@ -1325,7 +1478,6 @@ footer p {
 .schedule-page {
     margin-top: 80px;
     padding: 70px 30px 90px 30px;
-    background-color: #f5f5f5;
     min-height: 700px;
 }
 
