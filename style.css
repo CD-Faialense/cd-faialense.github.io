@@ -11,14 +11,14 @@ body {
             45deg,
             transparent 0px,
             transparent 19px,
-            rgba(15, 75, 140, 0.2) 19.5px,
+            rgba(15, 75, 140, 0.15) 19.5px,
             transparent 20px
         ),
         repeating-linear-gradient(
             -45deg,
             transparent 0px,
             transparent 19px,
-            rgba(15, 75, 140, 0.2) 19.5px,
+            rgba(15, 75, 140, 0.15) 19.5px,
             transparent 20px
         );
 
@@ -729,7 +729,6 @@ footer p {
 .standings-page {
     margin-top: 80px;
     padding: 70px 30px 90px 30px;
-    background-color: #f5f5f5;
     min-height: 700px;
 }
 
@@ -857,7 +856,7 @@ footer p {
 
 .official-standings-link:hover {
     color: #c4992d;
-    background-color: #041e3a;
+    background-color: #0b2f55;
 }
 
 /* Season Selector */
@@ -872,6 +871,7 @@ footer p {
 
 .season-selector label {
     font-weight: bold;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .season-selector select {
