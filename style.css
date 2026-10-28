@@ -124,7 +124,7 @@ nav a {
 }
 
 @media(max-width: 1340px){
-    header > nav{
+    header > nav, header > .nav-right{
         display: none;
     }
 
@@ -215,44 +215,15 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* Dropdown for Season */
-
-.dropdown{
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-
-    min-width: 180px;
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Dropdown links */
-.dropdown-content a {
-    display: block;
-    padding: 15px;
-    font-family: Rockwell, "Courier New", serif;
-    font-weight: 900;
-    text-transform: uppercase;
+.social-icon {
+    color: white;
+    font-size: 30px;
     text-decoration: none;
-    color: black;
-    font-size: 16px;
-    transition: color 0.20s;
+    transition: color 0.2s ease;
 }
 
-.dropdown-content a:hover {
-    color:#c4992d;
-    background-color: #f5f5f5;
-}
-
-/* Show menu on hover or keyboard focus */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
+.social-icon:hover {
+    color: #a88221;
 }
 
 
@@ -307,7 +278,7 @@ h1 {
 .club-name {
     font-family: Rockwell, "Courier New", serif;
     font-weight: 900;
-    letter-spacing: 2px;
+    font-size: 18px;
     text-transform: uppercase;
 }
 
@@ -419,6 +390,13 @@ h1 {
     font-size: 28px;
     letter-spacing: 2px;
     font-weight: bold;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
 }
 
 /* Gold Underline */
