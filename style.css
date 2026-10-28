@@ -180,6 +180,18 @@ nav a {
         color: #a88221;
         background-color: #0f4b8c;
     }
+
+    .brand-logo img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+
+        transform: translateY(-15px);
+
+        transition: width 0.4s ease,
+                    height 0.4s ease,
+                    transform 0.4s ease;
+    }
 }
 
 nav a:hover {
@@ -253,7 +265,6 @@ nav a:hover {
 
 .hero > img {
     width: 100%;
-    height: 800px;
     object-fit: cover;
     display: block;
 }
@@ -262,10 +273,10 @@ nav a:hover {
     position: absolute;
 
     bottom: 20px;
-    left: 0;
     width: 100%;
     text-align: center;
 }
+
 
 .hero .club-name {
     font-size: 70px;
@@ -284,11 +295,6 @@ nav a:hover {
     color: #c4992d;
 }
 
-.team-logo {
-    width: 100px !important;
-    height: auto !important;
-    object-fit: contain !important;
-}
 
 
 /* Text */
@@ -441,6 +447,11 @@ h1 {
     .nav-card {
         height: 250px;
     }
+
+    .hero .club-name{
+        font-size: 40px;
+    }
+
 }
 
 
