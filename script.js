@@ -658,7 +658,7 @@ fetch("./header.html")
 
                 const isOpen = mobileMenu.classList.toggle("active");
 
-                menuToggle.textContent = isOpen ? "✕" : "☰";
+                menuToggle.textContent = isOpen ? "Menu ✕" : "Menu ☰";
                 menuToggle.setAttribute("aria-expanded", String(isOpen));
                 menuToggle.setAttribute(
                     "aria-label",
@@ -670,7 +670,7 @@ fetch("./header.html")
             mobileMenu.querySelectorAll("a").forEach(link => {
                 link.addEventListener("click", () => {
                     mobileMenu.classList.remove("active");
-                    menuToggle.textContent = "☰";
+                    menuToggle.textContent = "Menu ☰";
                     menuToggle.setAttribute("aria-expanded", "false");
                     menuToggle.setAttribute("aria-label", "Open navigation menu");
                 });
@@ -680,7 +680,7 @@ fetch("./header.html")
             document.addEventListener("click", event => {
                 if (!header.contains(event.target)) {
                     mobileMenu.classList.remove("active");
-                    menuToggle.textContent = "☰";
+                    menuToggle.textContent = "Menu ☰";
                     menuToggle.setAttribute("aria-expanded", "false");
                     menuToggle.setAttribute("aria-label", "Open navigation menu");
                 }
