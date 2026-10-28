@@ -612,11 +612,84 @@ if (document.querySelector(".history-timeline")) {
 
 /* Header + Footer */
 
-fetch("header.html")
-    .then(response => response.text())
+/*Header*/
+
+fetch("./header.html")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to load header.html");
+        }
+
+        return response.text();
+    })
     .then(data => {
         document.body.insertAdjacentHTML("afterbegin", data);
-    });
+
+        const socialsButton = document.querySelector(".socials-toggle");
+
+        if (socialsButton) {
+            socialsButton.addEventListener("click", () => {
+                const socialsLinks = socialsButton.nextElementSibling;
+                const isOpen = socialsLinks.classList.toggle("open");
+
+                socialsButton.setAttribute("aria-expanded", isOpen);
+            });
+}
+
+        const header = document.querySelector("header");
+        const menuToggle = header.querySelector(".menu-toggle");
+        const mobileMenu = header.querySelector(".mobile-menu");
+
+        // Navbar scroll effect
+        function updateHeader() {
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        }
+
+        window.addEventListener("scroll", updateHeader, {
+            passive: true
+        });
+
+        updateHeader();
+
+        // Mobile menu toggle
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener("click", event => {
+                event.stopPropagation();
+
+                const isOpen = mobileMenu.classList.toggle("active");
+
+                menuToggle.textContent = isOpen ? "✕" : "☰";
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen ? "Close navigation menu" : "Open navigation menu"
+                );
+            });
+
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("active");
+                    menuToggle.textContent = "☰";
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-label", "Open navigation menu");
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener("click", event => {
+                if (!header.contains(event.target)) {
+                    mobileMenu.classList.remove("active");
+                    menuToggle.textContent = "☰";
+                    menuToggle.setAttribute("aria-expanded", "false");
+                    menuToggle.setAttribute("aria-label", "Open navigation menu");
+                }
+            });
+        } else {
+            console.error("Mobile menu button or menu not found in header.html");
+        }
+    })
+    .catch(error => console.error("Navbar error:", error));
 
 fetch("footer.html")
     .then(response => response.text())

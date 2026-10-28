@@ -47,14 +47,60 @@ header {
 }
 
 
-/* Logo */
+/* Center logo badge */
+.brand-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) ;
 
-header img {
-    width: 65px;
-    height: 100px;
+    width: 60px;
+    height: 140px;
+
+    /*background: #0f4b8c;
+    border-radius: 0 0 100px 100px;*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: width 0.4s ease,
+                height 0.4s ease,
+                border-radius 0.4s ease;
+                
+
+    z-index: 1;
+}
+
+/* Logo */
+.brand-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+
+    transition: width 0.4s ease,
+                height 0.4s ease,
+                transform 0.4s ease;
+}
+
+/* Keep navbar links above the badge */
+.main-nav,
+.nav-right {
     position: relative;
-    margin-top: 30px;
-    margin-right: 20px;
+    z-index: 2;
+}
+
+
+header.scrolled .brand-logo img {
+    width: 70px;
+    height: 70px;
+    transform: translateY(-30px);
 }
 
 
@@ -177,7 +223,7 @@ nav a:hover {
 }
 
 .team-logo {
-    width: 120px !important;
+    width: 100px !important;
     height: auto !important;
     object-fit: contain !important;
 }
