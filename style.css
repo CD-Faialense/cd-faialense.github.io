@@ -57,9 +57,6 @@ header {
     width: 60px;
     height: 140px;
 
-    /*background: #0f4b8c;
-    border-radius: 0 0 100px 100px;*/
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +115,71 @@ nav a {
     color: white;
     text-decoration: none;
     transition: color 0.15s;
+}
+
+/* Mobile navigation */
+.menu-toggle,
+.mobile-menu {
+    display: none;
+}
+
+@media(max-width: 1340px){
+    header > nav{
+        display: none;
+    }
+
+    /* Three-line button */
+    header .menu-toggle {
+        display: block;
+        margin-left: auto;
+        padding: 8px;
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 45px;
+        font-weight: 800;
+        font-family: Rockwell, "Courier New", serif;
+        line-height: 1;
+        cursor: pointer;
+        position: relative;
+        z-index: 1002;
+    }
+
+    /* Dropdown menu is hidden until clicked */
+    header .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 210px;
+        padding: 8px 0;
+        background: white;
+        flex-direction: column;
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
+        z-index: 1001;
+    }
+
+    header .mobile-menu.active {
+        display: flex;
+    }
+
+    header .mobile-menu > a {
+        display: block;
+        padding: 10px 20px;
+        font-family: Rockwell, "Courier New", serif;
+        color: #c4992d;
+        font-size: 16px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        transition: color 0.2s ease;
+    }
+
+    header .mobile-menu a :hover{
+        color: #a88221;
+        background-color: #0f4b8c;
+    }
 }
 
 nav a:hover {
