@@ -347,6 +347,7 @@ h1 {
     margin: 0;
 
     color: white;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 28px;
     letter-spacing: 2px;
     font-weight: bold;
@@ -409,6 +410,7 @@ h1 {
 .about-box {
     width: 50%;
     max-width: 600px;
+    max-height: 465px;
     box-sizing: border-box;
 
     background-color: white;
@@ -421,6 +423,7 @@ h1 {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
 
     text-align: center;
+    font-family: Rockwell, "Courier New", serif;
 
     display: flex;
     flex-direction: column;
@@ -518,6 +521,7 @@ h1 {
     gap: 24px;
     flex-wrap: wrap;
     color: white;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 1rem;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -836,10 +840,12 @@ footer p {
 
 .featured-news-card h3 {
     font-size: 32px;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .news-content p:not(.news-source) {
-    color: #555;
+    color: black;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 17px;
     line-height: 1.6;
     margin: 0 0 20px 0;
@@ -932,7 +938,8 @@ footer p {
 }
 
 .video-card p {
-    color: #1e1e1e;
+    color: black;
+    font-family: Rockwell, "Courier New", serif;
     margin: 0;
 }
 
@@ -1256,6 +1263,7 @@ footer p {
 
     border: 1px solid #ddd;
     border-radius: 10px;
+    font-family: Rockwell, "Courier New", serif;
 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 
@@ -1413,7 +1421,7 @@ html {
 /* History Page */
 
 .history-page {
-    margin-top: 80px;
+    margin-top: 140px;
     min-height: 700px;
 }
 
@@ -1491,6 +1499,7 @@ html {
     color: white;
     text-align: center;
     padding: 25px 10px 10px;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 #history-description {
@@ -1597,7 +1606,8 @@ html {
 
 .schedule-subtitle {
     text-align: center;
-    color: #555;
+    color:#c4992d;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 20px;
     margin: 10px 0 50px 0;
 }

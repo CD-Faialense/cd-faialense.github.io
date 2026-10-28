@@ -543,7 +543,7 @@ const historyEvents = {
         title: "Back-to-Back BSSL Champions",
         description: `CD Faialense continued its success in 2024, winning the BSSL First Division for the 
         second consecutive year. After winning the title in 2023, the club once again finished the season
-         as champions. In November they also qualified for the 2025 US Open Cup after win over FCY NY`,
+         as champions. In November they also qualified for the 2025 US Open Cup after win over FCY NY.`,
         image: "images/blazing-musket-image.png",
         alt: "CD Faialense trophies"
     },
