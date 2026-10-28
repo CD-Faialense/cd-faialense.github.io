@@ -512,12 +512,29 @@ h1 {
     max-height: 420px;
     overflow-y: auto;
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #c4992d #e5e5e5;
 
     font-size: 18px;
     line-height: 1.7;
 
     margin: 0;
 }
+
+.about-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.about-box::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 8px;
+}
+
+.about-box::-webkit-scrollbar-thumb {
+    background: #c4992d;
+    border-radius: 8px;
+}
+
 @media (max-width: 800px){
 
     .about-box h2{
