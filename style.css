@@ -767,7 +767,8 @@ h1 {
 }
 
 .schedule-button:hover {
-    background: #ddb849;
+    color: #c4992d;
+    background-color: #0b2f55;
     transform: translateY(-2px);
 }
 
@@ -1369,8 +1370,8 @@ footer p {
 }
 
 .roster-nav a:hover {
-    background-color: #0f4b8c;
-    color: white;
+    color: #c4992d;
+    background-color: #0b2f55;
 }
 
 /* ==============================
@@ -1903,7 +1904,8 @@ html {
 }
 
 .official-schedule-link:hover {
-    background-color: #c4992d;
+    color: #c4992d;
+    background-color: #0b2f55;
 }
 
 .match-score {
