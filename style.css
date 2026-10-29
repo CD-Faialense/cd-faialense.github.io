@@ -1749,7 +1749,8 @@ html {
 
 .match-date strong {
     display: block;
-    color: #555;
+    color: black;
+    font-family: Rockwell, "Courier New", serif;
     margin-top: 5px;
     font-size: 15px;
 }
@@ -1796,12 +1797,12 @@ html {
 
 /* Home games */
 .match-card.home-game {
-    background-color: #d5e1ee;
+    background-color: #dde5ee;
 }
 
 /* Away games */
 .match-card.away-game {
-    background-color: #e8dfc7;
+    background-color: #f1ede2;
 }
 
 
