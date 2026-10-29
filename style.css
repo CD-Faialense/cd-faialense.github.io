@@ -256,42 +256,6 @@ nav a {
         color: #a88221;
     }
 
-
-    /*header .mobile-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 210px;
-        padding: 8px 0;
-        background: white;
-        flex-direction: column;
-        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.35);
-        z-index: 1001;
-    }
-
-    header .mobile-menu.active {
-        display: flex;
-    }
-
-    header .mobile-menu > a {
-        display: block;
-        padding: 10px 20px;
-        font-family: Rockwell, "Courier New", serif;
-        color: #c4992d;
-        font-size: 16px;
-        font-weight: 900;
-        text-transform: uppercase;
-        text-decoration: none;
-
-        transition: color 0.2s ease;
-    }
-
-    header .mobile-menu a :hover{
-        color: #a88221;
-        background-color: #0f4b8c;
-    }*/
-
     .brand-logo img {
         width: 90px;
         height: 90px;
