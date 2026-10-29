@@ -1393,7 +1393,7 @@ footer p {
 }
 
 .roster-page .player-info > p {
-    color: #777;
+    color: black;
     font-size: 14px;
     margin: 0 0 14px;
 }
@@ -1768,13 +1768,14 @@ html {
 
 .match-info p {
     margin: 5px 0 0 0;
-    color: #333;
+    color: black;
     font-size: 18px;
 }
 
 .match-location {
     font-size: 15px !important;
-    color: #777 !important;
+    color: black;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .match-type {
@@ -1791,6 +1792,16 @@ html {
     font-size: 25px;
     font-weight: 900;
     padding-left: 20px;
+}
+
+/* Home games */
+.match-card.home-game {
+    background-color: #d5e1ee;
+}
+
+/* Away games */
+.match-card.away-game {
+    background-color: #e8dfc7;
 }
 
 

@@ -25,6 +25,7 @@ async function loadNextMatch() {
                  match.awayTeam.includes("CD Faialense"))
             )
             .map(match => {
+
                 const [monthName, day] = match.date.split("-");
                 const monthIndex =
                     new Date(`${monthName} 1, 2026`).getMonth();
@@ -356,8 +357,13 @@ async function loadSchedule() {
                     match.homeScore !== null &&
                     match.awayScore !== null;
 
-                const card = document.createElement("div");
-                card.className = "match-card";
+                const isHomeGame = match.homeTeam
+                    .toLowerCase()
+                    .includes("cd faialense");
+
+                card.className = isHomeGame
+                    ? "match-card home-game"
+                    : "match-card away-game";
 
                 if (hasScore) {
                     card.classList.add("completed");
