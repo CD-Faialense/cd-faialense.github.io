@@ -357,13 +357,18 @@ async function loadSchedule() {
                     match.homeScore !== null &&
                     match.awayScore !== null;
 
+
+                // Determine whether CD Faialense is the home team.
                 const isHomeGame = match.homeTeam
                     .toLowerCase()
                     .includes("cd faialense");
 
-                card.className = isHomeGame
-                    ? "match-card home-game"
-                    : "match-card away-game";
+                // Create the card BEFORE styling it.
+                const card = document.createElement("div");
+
+                card.className = isHomeGame? 
+                    "match-card home-game": 
+                    "match-card away-game";
 
                 if (hasScore) {
                     card.classList.add("completed");
