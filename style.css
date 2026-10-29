@@ -146,7 +146,118 @@ nav a {
     }
 
     /* Dropdown menu is hidden until clicked */
+
+    
+    /* Full-screen slide-in navigation panel */
     header .mobile-menu {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: 80vw;
+        height: 100vh;
+        height: 100dvh;
+
+        box-sizing: border-box;
+        padding: 0 25px;
+
+        background: #0f4b8c;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.25);
+        z-index: 1001;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.45s ease,
+            visibility 0s linear 0.45s;
+    }
+
+    /* Open panel */
+    header .mobile-menu.active {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+
+        transition:
+            transform 0.45s ease,
+            visibility 0s;
+    }
+
+    /* Individual navigation links */
+    header .mobile-menu > a {
+        display: block;
+        padding: 8px 12px;
+
+        font-family: Rockwell, "Courier New", serif;
+        color: white;
+        font-size: clamp(20px, 4vw, 28px);
+        font-weight: 900;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+        transition: 0.2s ease;
+
+        opacity: 0;
+        transform: translateX(45px);
+    }
+
+    /* Links slide in one at a time */
+    header .mobile-menu.active > a {
+        animation: menuLinkIn 0.45s ease forwards;
+    }
+
+    header .mobile-menu.active > a:nth-child(1) {
+        animation-delay: 0.15s;
+    }
+
+    header .mobile-menu.active > a:nth-child(2) {
+        animation-delay: 0.25s;
+    }
+
+    header .mobile-menu.active > a:nth-child(3) {
+        animation-delay: 0.35s;
+    }
+
+    header .mobile-menu.active > a:nth-child(4) {
+        animation-delay: 0.45s;
+    }
+
+    header .mobile-menu.active > a:nth-child(5) {
+        animation-delay: 0.55s;
+    }
+
+    header .mobile-menu.active > a:nth-child(6) {
+        animation-delay: 0.65s;
+    }
+
+    @keyframes menuLinkIn {
+        from {
+            opacity: 0;
+            transform: translateX(45px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Hover effect */
+    header .mobile-menu > a:hover {
+        color: #a88221;
+    }
+
+
+    /*header .mobile-menu {
         display: none;
         position: absolute;
         top: 100%;
@@ -179,7 +290,7 @@ nav a {
     header .mobile-menu a :hover{
         color: #a88221;
         background-color: #0f4b8c;
-    }
+    }*/
 
     .brand-logo img {
         width: 90px;
@@ -563,6 +674,7 @@ h1 {
     padding: 35px 20px;
     display: flex;
     justify-content: center;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .next-match-container {
@@ -1702,6 +1814,7 @@ html {
 .schedule-section {
     max-width: 1100px;
     margin: 0 auto 60px auto;
+    font-family: Rockwell, "Courier New", serif;
 }
 
 .schedule-section h2 {
@@ -1744,6 +1857,7 @@ html {
     display: block;
     color: #0f4b8c;
     font-weight: bold;
+    font-family: Rockwell, "Courier New", serif;
     font-size: 17px;
 }
 
