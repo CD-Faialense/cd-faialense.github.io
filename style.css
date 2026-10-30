@@ -1915,3 +1915,34 @@ html {
     font-weight: 900;
     margin: 8px 0 0 0 !important;
 }
+
+/* CONSISTENT MOBILE HEADER */
+
+@media (max-width: 1340px) {
+
+    header {
+        height: 80px;
+        min-height: 80px;
+    }
+
+    header .brand-badge {
+        height: 140px;
+    }
+
+    header .brand-logo img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        transform: translateY(-15px);
+    }
+
+    header.scrolled .brand-logo img {
+        width: 70px;
+        height: 70px;
+        transform: translateY(-30px);
+    }
+
+    header .menu-toggle {
+        font-size: 30px;
+    }
+}
